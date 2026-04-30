@@ -349,87 +349,117 @@
 
     <hr>
 
-    <section>
-        <h2>Comparacion de planes</h2>
-        <p>Elige el plan que mejor se adapte a tu ritmo y objetivo.</p>
+    <!-- Tabla de comparacion rediseñada -->
+    <section class="comparacion-section">
+        <div class="comparacion-header">
+            <span class="seccion-tag">Comparativa</span>
+            <h2 class="comparacion-titulo">¿Cuál es <span class="amarillo">para ti</span>?</h2>
+            <p class="comparacion-sub">Encuentra el plan que mejor se adapte a tu estilo de vida.</p>
+        </div>
 
-        <!-- Contenedor usado para dar formato a la tabla desde CSS -->
-        <div class="tabla-contenedor">
-
-            <!-- table crea una tabla de información -->
-            <table>
-
-                <!-- tr representa una fila de la tabla -->
-                <tr>
-                    <!-- th se usa para los encabezados de las columnas -->
-                    <th>Plan</th>
-                    <th>Ideal para</th>
-                    <th>Beneficio</th>
-                </tr>
-
-                <tr>
-                    <!-- td representa una celda normal dentro de la tabla -->
-                    <td>Grupal</td>
-                    <td>Entrenar con amigos</td>
-                    <td>Motivacion en equipo</td>
-                </tr>
-
-                <tr>
-                    <td>Estudiantes</td>
-                    <td>Jovenes con carnet</td>
-                    <td>Precio accesible</td>
-                </tr>
-
-                <tr>
-                    <td>Mensual</td>
-                    <td>Personas que empiezan</td>
-                    <td>Probar 1 mes</td>
-                </tr>
-
-                <tr>
-                    <td>Trimestral</td>
-                    <td>Buscar constancia</td>
-                    <td>Disciplina 90 dias</td>
-                </tr>
-
-                <tr>
-                    <td>Semestral</td>
-                    <td>Cambio a largo plazo</td>
-                    <td>Crear habito</td>
-                </tr>
+        <div class="tabla-wrapper">
+            <table class="tabla-comparacion">
+                <thead>
+                    <tr>
+                        <th>Plan</th>
+                        <th>Ideal para</th>
+                        <th>Beneficio principal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Grupal</strong></td>
+                        <td>Entrenar con amigos</td>
+                        <td><span class="tabla-pill">Motivación en equipo</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Estudiantes</strong></td>
+                        <td>Jóvenes con carnet</td>
+                        <td><span class="tabla-pill">Precio accesible</span></td>
+                    </tr>
+                    <tr class="tabla-destacada">
+                        <td><strong>Mensual</strong> <span class="tabla-star">★</span></td>
+                        <td>Personas que empiezan</td>
+                        <td><span class="tabla-pill tabla-pill-amarillo">Probar 1 mes</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Trimestral</strong></td>
+                        <td>Buscar constancia</td>
+                        <td><span class="tabla-pill">Disciplina 90 días</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Semestral</strong></td>
+                        <td>Cambio a largo plazo</td>
+                        <td><span class="tabla-pill">Crear hábito</span></td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </section>
 
     <hr>
 
-    <section>
-        <h2 id="horarios">Horarios de atencion</h2>
-        <p>Tenemos horarios flexibles para que puedas entrenar antes o después de tus actividades.</p>
+    <!-- Horarios: dos columnas (mañana / tarde-noche) lado a lado -->
+    <section class="horarios-section" id="horarios">
+        <div class="horarios-header">
+            <span class="seccion-tag">Lunes a Viernes</span>
+            <h2 class="horarios-titulo">Cuando <span class="amarillo">tú quieras</span></h2>
+            <p class="horarios-sub">Horarios flexibles para que entrenes antes o después del trabajo.</p>
+        </div>
 
-        <!-- Contenedor para separar los horarios en bloques -->
-        <div class="horarios-contenedor">
+        <div class="horarios-grid">
+            <!-- Bloque mañana -->
+            <article class="horario-bloque horario-manana">
+                <div class="horario-bloque-header">
+                    <div class="horario-icono">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3>Mañana</h3>
+                        <span class="horario-rango">5:00 AM - 8:00 AM</span>
+                    </div>
+                </div>
+                <ul class="horario-lista">
+                    <li><span class="hora">5:00</span> <span class="hora-meridiano">AM</span></li>
+                    <li><span class="hora">6:00</span> <span class="hora-meridiano">AM</span></li>
+                    <li><span class="hora">7:00</span> <span class="hora-meridiano">AM</span></li>
+                    <li><span class="hora">8:00</span> <span class="hora-meridiano">AM</span></li>
+                </ul>
+            </article>
 
-            <div class="horario">
-                <h3>Horarios Mañana</h3>
-                <p>5:00 AM</p>
-                <p>6:00 AM</p>
-                <p>7:00 AM</p>
-                <p>8:00 AM</p>
-            </div>
-
-            <div class="horario">
-                <h3>Horarios Tarde / Noche</h3>
-                <p>4:00 PM</p>
-                <p>5:00 PM</p>
-                <p>6:00 PM</p>
-                <p>7:00 PM</p>
-                <p>8:00 PM</p>
-            </div>
-
+            <!-- Bloque tarde/noche -->
+            <article class="horario-bloque horario-tarde">
+                <div class="horario-bloque-header">
+                    <div class="horario-icono">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3>Tarde / Noche</h3>
+                        <span class="horario-rango">4:00 PM - 8:00 PM</span>
+                    </div>
+                </div>
+                <ul class="horario-lista">
+                    <li><span class="hora">4:00</span> <span class="hora-meridiano">PM</span></li>
+                    <li><span class="hora">5:00</span> <span class="hora-meridiano">PM</span></li>
+                    <li><span class="hora">6:00</span> <span class="hora-meridiano">PM</span></li>
+                    <li><span class="hora">7:00</span> <span class="hora-meridiano">PM</span></li>
+                    <li><span class="hora">8:00</span> <span class="hora-meridiano">PM</span></li>
+                </ul>
+            </article>
         </div>
     </section>
-
     <hr>
 
     <section>

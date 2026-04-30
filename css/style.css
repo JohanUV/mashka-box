@@ -391,61 +391,7 @@ input[type="submit"]:hover{
 
 
 
-/* 
-    Contenedor de horarios.
-*/
-.horarios-contenedor{
-    display: grid;
-    gap: 15px;
-    margin-top: 20px;
-}
 
-/* 
-    Tarjetas de horarios.
-*/
-.horario{
-    background-color: #0d0d0d;
-    border: 2px solid #FFD21F;
-    border-radius: 15px;
-    padding: 18px;
-    text-align: center;
-    transition: transform 0.25s;
-}
-
-/* 
-    Efecto de horarios.
-*/
-.horario:hover{
-    transform: translateY(-3px);
-}
-
-/* 
-    Titulos de horarios.
-*/
-.horario h3{
-    color: #4A9ADD;
-    margin-bottom: 10px;
-}
-
-/* 
-    Horas dentro de la tarjeta.
-*/
-.horario p{
-    background-color: #1a1a1a;
-    margin: 8px auto;
-    padding: 10px;
-    border-radius: 8px;
-    width: 80%;
-    color: #e0e0e0;
-    transition: background-color 0.2s;
-}
-
-/* 
-    Efecto sobre cada hora.
-*/
-.horario p:hover{
-    background-color: #222222;
-}
 
 /* 
     Footer.
@@ -1649,4 +1595,376 @@ footer p{
     background: linear-gradient(90deg, #FFC107 0%, #FFD21F 100%);
     color: #050505;
     box-shadow: 0 8px 24px rgba(255, 210, 31, 0.5);
+}
+/* ═══════════════════════════════════════════════════════
+   TABLA DE COMPARACION
+   ═══════════════════════════════════════════════════════ */
+
+.comparacion-section{
+    background: transparent;
+    border-left: none;
+    border-radius: 0;
+    margin: 80px 0;
+    padding: 0 20px;
+}
+
+.comparacion-header{
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.comparacion-titulo{
+    font-size: 38px;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    border: none;
+    padding: 0;
+    margin: 16px 0 12px 0;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+}
+
+@media (min-width: 900px){
+    .comparacion-titulo{
+        font-size: 46px;
+    }
+}
+
+.comparacion-sub{
+    font-size: 16px;
+    color: #aaaaaa;
+    line-height: 1.6;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* 
+    Wrapper que permite scroll horizontal en movil
+    si la tabla no entra completa.
+*/
+.tabla-wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow-x: auto;
+    background: linear-gradient(180deg, #0d0d0d 0%, #111111 100%);
+    border-radius: 20px;
+    border: 1px solid rgba(74, 154, 221, 0.15);
+    padding: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Tabla nueva (override de los estilos viejos) */
+.tabla-comparacion{
+    width: 100%;
+    min-width: 500px;
+    margin: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: transparent;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.tabla-comparacion thead th{
+    background: linear-gradient(90deg, #FFD21F 0%, #FFC107 100%);
+    color: #050505;
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: none;
+}
+
+.tabla-comparacion thead th:first-child{
+    border-radius: 12px 0 0 0;
+}
+
+.tabla-comparacion thead th:last-child{
+    border-radius: 0 12px 0 0;
+}
+
+.tabla-comparacion tbody td{
+    padding: 16px 20px;
+    color: #e0e0e0;
+    font-size: 14px;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: transparent;
+    transition: background 0.2s ease;
+}
+
+.tabla-comparacion tbody td strong{
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+/* Filas alternadas con un tinte sutil */
+.tabla-comparacion tbody tr:nth-child(even) td{
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Hover en filas */
+.tabla-comparacion tbody tr:hover td{
+    background: rgba(74, 154, 221, 0.08);
+}
+
+/* Quita el borde de la ultima fila */
+.tabla-comparacion tbody tr:last-child td{
+    border-bottom: none;
+}
+
+/* Fila destacada (Plan Mensual) */
+.tabla-destacada td{
+    background: rgba(255, 210, 31, 0.06) !important;
+    border-bottom-color: rgba(255, 210, 31, 0.15) !important;
+}
+
+.tabla-destacada:hover td{
+    background: rgba(255, 210, 31, 0.12) !important;
+}
+
+.tabla-destacada td strong{
+    color: #FFD21F;
+}
+
+/* Estrellita junto al plan destacado */
+.tabla-star{
+    color: #FFD21F;
+    margin-left: 4px;
+    font-size: 14px;
+}
+
+/* Pills para los beneficios */
+.tabla-pill{
+    display: inline-block;
+    padding: 5px 12px;
+    background: rgba(74, 154, 221, 0.15);
+    color: #4A9ADD;
+    border: 1px solid rgba(74, 154, 221, 0.3);
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tabla-pill-amarillo{
+    background: rgba(255, 210, 31, 0.15);
+    color: #FFD21F;
+    border-color: rgba(255, 210, 31, 0.4);
+}
+
+/* ═══════════════════════════════════════════════════════
+   HORARIOS - Dos columnas lado a lado
+   ═══════════════════════════════════════════════════════ */
+
+.horarios-section{
+    background: transparent;
+    border-left: none;
+    border-radius: 0;
+    margin: 80px 0;
+    padding: 0 20px;
+}
+
+.horarios-header{
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.horarios-titulo{
+    font-size: 38px;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    border: none;
+    padding: 0;
+    margin: 16px 0 12px 0;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+}
+
+@media (min-width: 900px){
+    .horarios-titulo{
+        font-size: 46px;
+    }
+}
+
+.horarios-sub{
+    font-size: 16px;
+    color: #aaaaaa;
+    line-height: 1.6;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* 
+    Grid: 1 columna en movil, 2 columnas lado a lado en escritorio.
+*/
+.horarios-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (min-width: 700px){
+    .horarios-grid{
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+}
+
+/* Bloque de horario (mañana o tarde) */
+.horario-bloque{
+    background: linear-gradient(180deg, 
+        rgba(13, 13, 13, 0.95) 0%, 
+        rgba(17, 17, 17, 0.95) 100%);
+    border-radius: 20px;
+    padding: 28px;
+    border: 1px solid rgba(74, 154, 221, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Mañana: acento amarillo */
+.horario-manana{
+    border-left: 4px solid #FFD21F;
+}
+
+.horario-manana:hover{
+    border-color: rgba(255, 210, 31, 0.5);
+    border-left-color: #FFD21F;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 
+                0 0 30px rgba(255, 210, 31, 0.1);
+    transform: translateY(-3px);
+}
+
+/* Tarde: acento azul */
+.horario-tarde{
+    border-left: 4px solid #4A9ADD;
+}
+
+.horario-tarde:hover{
+    border-color: rgba(74, 154, 221, 0.5);
+    border-left-color: #4A9ADD;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(74, 154, 221, 0.1);
+    transform: translateY(-3px);
+}
+
+/* Header del bloque: icono + titulo + rango */
+.horario-bloque-header{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.horario-icono{
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.horario-manana .horario-icono{
+    background: rgba(255, 210, 31, 0.15);
+    color: #FFD21F;
+    border: 1px solid rgba(255, 210, 31, 0.3);
+}
+
+.horario-tarde .horario-icono{
+    background: rgba(74, 154, 221, 0.15);
+    color: #4A9ADD;
+    border: 1px solid rgba(74, 154, 221, 0.3);
+}
+
+.horario-bloque h3{
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 2px 0;
+    text-align: left;
+    border: none;
+    padding: 0;
+}
+
+.horario-rango{
+    font-size: 12px;
+    color: #aaaaaa;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Lista de horas dentro del bloque */
+.horario-lista{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.horario-lista li{
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+    transition: all 0.25s ease;
+    cursor: default;
+}
+
+.horario-lista li:hover{
+    background: rgba(255, 255, 255, 0.06);
+    transform: scale(1.05);
+}
+
+.horario-manana .horario-lista li:hover{
+    border-color: rgba(255, 210, 31, 0.5);
+    color: #FFD21F;
+}
+
+.horario-tarde .horario-lista li:hover{
+    border-color: rgba(74, 154, 221, 0.5);
+    color: #4A9ADD;
+}
+
+.hora{
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: color 0.25s ease;
+}
+
+.horario-manana .horario-lista li:hover .hora{
+    color: #FFD21F;
+}
+
+.horario-tarde .horario-lista li:hover .hora{
+    color: #4A9ADD;
+}
+
+.hora-meridiano{
+    color: #aaaaaa;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
