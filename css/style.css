@@ -1968,3 +1968,818 @@ footer p{
     font-weight: 700;
     letter-spacing: 1px;
 }
+/* ═══════════════════════════════════════════════════════
+   MULTIMEDIA - Video destacado
+   ═══════════════════════════════════════════════════════ */
+
+.multimedia-section{
+    background: transparent;
+    border-left: none;
+    border-radius: 0;
+    margin: 80px 0;
+    padding: 0 20px;
+}
+
+.multimedia-header{
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.multimedia-titulo{
+    font-size: 38px;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    border: none;
+    padding: 0;
+    margin: 16px 0 12px 0;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+}
+
+@media (min-width: 900px){
+    .multimedia-titulo{
+        font-size: 46px;
+    }
+}
+
+.multimedia-sub{
+    font-size: 16px;
+    color: #aaaaaa;
+    line-height: 1.6;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.multimedia-video{
+    /* Mas chico porque el video es vertical (filmado con celular) */
+    max-width: 380px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 210, 31, 0.2),
+        0 0 40px rgba(255, 210, 31, 0.1);
+    /* Limite de altura para que no sea ridiculamente alto */
+    max-height: 680px;
+}
+
+/* Override del estilo generico de video */
+.multimedia-video video{
+    width: 100%;
+    max-width: none;
+    height: auto;
+    max-height: 680px;
+    margin: 0;
+    border: none;
+    border-radius: 20px;
+    display: block;
+    /* Si fuera horizontal en el futuro, object-fit lo manejaria */
+    object-fit: cover;
+}
+
+/* En tablet y escritorio dejamos un pelin mas grande pero sigue siendo vertical */
+@media (min-width: 700px){
+    .multimedia-video{
+        max-width: 420px;
+        max-height: 720px;
+    }
+    .multimedia-video video{
+        max-height: 720px;
+    }
+}
+
+/* Override del estilo generico de video */
+.multimedia-video video{
+    width: 100%;
+    max-width: none;
+    height: auto;
+    margin: 0;
+    border: none;
+    border-radius: 20px;
+    display: block;
+}
+
+/* ═══════════════════════════════════════════════════════
+   UBICACION - Layout 2 columnas estilo DAFEC
+   ═══════════════════════════════════════════════════════ */
+
+.ubicacion-section{
+    background: linear-gradient(180deg, 
+        rgba(13, 13, 13, 0.95) 0%, 
+        rgba(5, 5, 5, 1) 100%);
+    border-left: none;
+    border-radius: 24px;
+    margin: 60px 20px;
+    padding: 60px 30px;
+    border: 1px solid rgba(74, 154, 221, 0.15);
+}
+
+.ubicacion-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (min-width: 900px){
+    .ubicacion-container{
+        grid-template-columns: 1fr 1.2fr;
+        gap: 60px;
+    }
+}
+
+.ubicacion-info .seccion-tag{
+    color: #4A9ADD;
+    background: rgba(74, 154, 221, 0.15);
+    border-color: rgba(74, 154, 221, 0.3);
+}
+
+.ubicacion-titulo{
+    font-size: 38px;
+    font-weight: 800;
+    color: white;
+    text-align: left;
+    border: none;
+    padding: 0;
+    margin: 16px 0 12px 0;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+}
+
+@media (min-width: 900px){
+    .ubicacion-titulo{
+        font-size: 44px;
+    }
+}
+
+.ubicacion-sub{
+    font-size: 16px;
+    color: #aaaaaa;
+    line-height: 1.6;
+    text-align: left;
+    padding: 0;
+    margin: 0 0 32px 0;
+}
+
+/* Lista de detalles: direccion, telefono, horario, whatsapp */
+.ubicacion-detalles{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.ubicacion-item{
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+/* Cuadrado del icono - amarillo de marca */
+.ubicacion-icono{
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 210, 31, 0.15);
+    color: #FFD21F;
+    border: 1px solid rgba(255, 210, 31, 0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* WhatsApp en verde */
+.ubicacion-icono-wa{
+    background: rgba(37, 211, 102, 0.15);
+    color: #25d366;
+    border-color: rgba(37, 211, 102, 0.3);
+}
+
+.ubicacion-item strong{
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.ubicacion-item p{
+    font-size: 14px;
+    color: #aaaaaa;
+    line-height: 1.5;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+.ubicacion-link{
+    font-size: 14px;
+    color: #aaaaaa;
+    line-height: 1.5;
+    transition: color 0.2s ease;
+    display: block;
+}
+
+.ubicacion-link:hover{
+    color: #FFD21F;
+}
+
+/* Mapa - lado derecho */
+.ubicacion-mapa{
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(74, 154, 221, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.ubicacion-mapa iframe{
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   FOOTER NUEVO
+   ═══════════════════════════════════════════════════════ */
+
+.footer{
+    background: linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
+    color: rgba(255, 255, 255, 0.5);
+    padding: 60px 20px 30px;
+    border-top: 1px solid rgba(255, 210, 31, 0.15);
+    margin-top: 60px;
+}
+
+.footer-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+@media (min-width: 700px){
+    .footer-grid{
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 50px;
+    }
+}
+
+/* Columna de marca */
+.footer-marca{
+    max-width: 400px;
+}
+
+.footer-logo{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFD21F;
+    margin-bottom: 16px;
+}
+
+.footer-logo span{
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.footer-logo strong{
+    color: #FFD21F;
+    font-weight: 800;
+}
+
+.footer-desc{
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: left;
+    padding: 0;
+    margin: 0 0 24px 0;
+}
+
+/* Botones de redes sociales */
+.footer-social{
+    display: flex;
+    gap: 10px;
+}
+
+/* 
+    Override de los estilos genericos de a porque se hereda como pildora.
+    width: auto + display: flex hacen que el boton sea cuadrado del tamaño correcto.
+*/
+.social-btn{
+    width: 38px;
+    height: 38px;
+    margin: 0;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid transparent;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+}
+
+.social-btn:hover{
+    transform: translateY(-3px);
+}
+
+.social-fb:hover{
+    background: rgba(24, 119, 242, 0.25);
+    color: #1877f2;
+    box-shadow: 0 6px 20px rgba(24, 119, 242, 0.3);
+}
+
+.social-ig:hover{
+    background: rgba(225, 48, 108, 0.25);
+    color: #e1306c;
+    box-shadow: 0 6px 20px rgba(225, 48, 108, 0.3);
+}
+
+.social-wa:hover{
+    background: rgba(37, 211, 102, 0.25);
+    color: #25d366;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+}
+
+/* Columnas de links del footer */
+.footer-col h4{
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 13px;
+    font-weight: 800;
+    margin: 0 0 18px 0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: left;
+    border: none;
+    padding: 0;
+}
+
+.footer-col ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: auto;
+}
+
+.footer-col ul li{
+    margin-bottom: 10px;
+}
+
+/* Override total para los a del footer (no deben ser pildoras) */
+.footer-col ul a{
+    display: inline;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.2s ease;
+    letter-spacing: normal;
+    font-weight: normal;
+}
+
+.footer-col ul a:hover{
+    color: #FFD21F;
+    background: none;
+    border: none;
+}
+
+/* Linea inferior del footer */
+.footer-bottom{
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    text-align: center;
+}
+
+@media (min-width: 700px){
+    .footer-bottom{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.footer-bottom p{
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════════
+   BOTON FLOTANTE DE WHATSAPP
+   ═══════════════════════════════════════════════════════ */
+
+/* 
+    Override fuerte porque el a generico le pone width 85%, padding, border, etc.
+    Aqui forzamos que sea un circulo perfecto y este en posicion fija.
+*/
+.whatsapp-float{
+    position: fixed !important;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    width: 60px !important;
+    height: 60px;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #25d366 !important;
+    border: none !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 4px 20px rgba(37, 211, 102, 0.4),
+        0 0 0 0 rgba(37, 211, 102, 0.5);
+    transition: all 0.3s ease;
+    animation: pulsoWhatsapp 2.5s ease-in-out infinite;
+    text-align: center;
+}
+
+.whatsapp-float:hover{
+    transform: scale(1.1);
+    background: #20b958 !important;
+    border: none !important;
+    box-shadow: 
+        0 8px 30px rgba(37, 211, 102, 0.6),
+        0 0 0 12px rgba(37, 211, 102, 0.1);
+    animation-play-state: paused;
+}
+
+/* Pulso animado constante para llamar la atencion */
+@keyframes pulsoWhatsapp{
+    0%, 100% {
+        box-shadow: 
+            0 4px 20px rgba(37, 211, 102, 0.4),
+            0 0 0 0 rgba(37, 211, 102, 0.4);
+    }
+    50% {
+        box-shadow: 
+            0 4px 25px rgba(37, 211, 102, 0.5),
+            0 0 0 14px rgba(37, 211, 102, 0);
+    }
+}
+
+/* En movil un poco mas pequeño */
+@media (max-width: 600px){
+    .whatsapp-float{
+        bottom: 18px;
+        right: 18px;
+        width: 54px !important;
+        height: 54px;
+    }
+    .whatsapp-float svg{
+        width: 24px;
+        height: 24px;
+    }
+}
+/* ═══════════════════════════════════════════════════════
+   SECCION WHATSAPP DIRECTO
+   ═══════════════════════════════════════════════════════ */
+
+.whatsapp-section{
+    background: linear-gradient(180deg, 
+        rgba(13, 13, 13, 0.95) 0%, 
+        rgba(5, 5, 5, 0.98) 100%);
+    border-left: none;
+    border-radius: 24px;
+    margin: 60px 20px;
+    padding: 60px 30px;
+    border: 1px solid rgba(37, 211, 102, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Resplandor verde decorativo de fondo */
+.whatsapp-section::before{
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(37, 211, 102, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.whatsapp-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 900px){
+    .whatsapp-container{
+        grid-template-columns: 1.1fr 1fr;
+        gap: 60px;
+    }
+}
+
+/* Tag del titulo: en verde para asociar con WhatsApp */
+.whatsapp-tag{
+    color: #25d366 !important;
+    background: rgba(37, 211, 102, 0.15) !important;
+    border-color: rgba(37, 211, 102, 0.3) !important;
+}
+
+.whatsapp-titulo{
+    font-size: 38px;
+    font-weight: 800;
+    color: white;
+    text-align: left;
+    border: none;
+    padding: 0;
+    margin: 16px 0 14px 0;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+}
+
+@media (min-width: 900px){
+    .whatsapp-titulo{
+        font-size: 44px;
+    }
+}
+
+/* La parte verde "WhatsApp" del titulo */
+.verde-wa{
+    color: #25d366;
+}
+
+.whatsapp-sub{
+    font-size: 16px;
+    color: #aaaaaa;
+    line-height: 1.7;
+    text-align: left;
+    padding: 0;
+    margin: 0 0 28px 0;
+}
+
+/* Lista de features */
+.whatsapp-features{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.wa-feature{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #e0e0e0;
+    font-size: 14px;
+}
+
+.wa-check{
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    background: rgba(37, 211, 102, 0.2);
+    color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 12px;
+}
+
+/* Boton grande de WhatsApp - override del a generico */
+.btn-whatsapp-grande{
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: auto !important;
+    margin: 0 0 14px 0 !important;
+    padding: 14px 28px !important;
+    background: #25d366 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 14px !important;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp-grande:hover{
+    background: #20b958 !important;
+    color: white !important;
+    border: none !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+}
+
+.btn-whatsapp-grande svg{
+    flex-shrink: 0;
+}
+
+.wa-numero{
+    color: #25d366;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+/* ─── Mockup del telefono ─── */
+
+.whatsapp-visual{
+    display: flex;
+    justify-content: center;
+}
+
+.phone-mockup{
+    width: 100%;
+    max-width: 340px;
+    background: #ece5dd;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 
+        0 25px 60px rgba(0, 0, 0, 0.5),
+        0 0 0 8px #1a1a1a,
+        0 0 0 9px #333;
+    transform: rotate(-2deg);
+    transition: transform 0.4s ease;
+}
+
+.phone-mockup:hover{
+    transform: rotate(0deg) scale(1.02);
+}
+
+/* Header del mockup: avatar + nombre + estado */
+.phone-header{
+    background: #075e54;
+    color: white;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.phone-avatar{
+    width: 40px;
+    height: 40px;
+    background: #FFD21F;
+    color: #050505;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.phone-avatar svg{
+    width: 24px;
+    height: 24px;
+}
+
+.phone-name{
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.phone-status{
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+}
+
+/* Cuerpo de mensajes */
+.phone-messages{
+    padding: 18px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #ece5dd;
+    /* Patron sutil de fondo de WhatsApp */
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+    background-size: 30px 30px;
+    min-height: 320px;
+}
+
+.msg{
+    max-width: 75%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    line-height: 1.4;
+    color: #303030;
+    word-wrap: break-word;
+    animation: slideMsg 0.5s ease-out backwards;
+}
+
+.msg-recibido{
+    background: white;
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.msg-enviado{
+    background: #dcf8c6;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+/* Animacion escalonada de los mensajes al cargar */
+.msg:nth-child(1){ animation-delay: 0.3s; }
+.msg:nth-child(2){ animation-delay: 0.8s; }
+.msg:nth-child(3){ animation-delay: 1.5s; }
+.msg:nth-child(4){ animation-delay: 2.2s; }
+
+@keyframes slideMsg{
+    from{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Indicador de "escribiendo..." con 3 puntitos pulsantes */
+.msg-typing{
+    display: flex;
+    gap: 4px;
+    padding: 12px;
+    width: fit-content;
+}
+
+.typing-dot{
+    width: 7px;
+    height: 7px;
+    background: #999;
+    border-radius: 50%;
+    animation: typingPulse 1.4s ease-in-out infinite;
+}
+
+.typing-dot:nth-child(2){ animation-delay: 0.2s; }
+.typing-dot:nth-child(3){ animation-delay: 0.4s; }
+
+@keyframes typingPulse{
+    0%, 60%, 100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    30% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* En movil quitamos la rotacion para que se vea recto */
+@media (max-width: 700px){
+    .phone-mockup{
+        transform: rotate(0deg);
+        max-width: 320px;
+    }
+    .whatsapp-features{
+        grid-template-columns: 1fr;
+    }
+}
