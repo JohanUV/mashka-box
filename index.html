@@ -179,82 +179,171 @@
     </section>
     <hr>
 
-    <section>
-        <h2 id="beneficios">Beneficios</h2>
-        <p>
-            Entrena en un ambiente motivador, acompañado por una comunidad que te impulsa
-            a dar lo mejor de ti en cada clase.
-        </p>
+    <!-- Beneficios: 4 tarjetas con iconos SVG, hover con glow -->
+    <section class="beneficios-section" id="beneficios">
+        <div class="beneficios-header">
+            <span class="seccion-tag">Por qué elegirnos</span>
+            <h2 class="beneficios-titulo">Razones para <span class="amarillo">empezar hoy</span></h2>
+            <p class="beneficios-sub">Más que entrenar: una experiencia diseñada para transformarte.</p>
+        </div>
 
-        <!-- Contenedor general para organizar las tarjetas de beneficios -->
-        <div class="beneficios-contenedor">
+        <div class="beneficios-grid">
+            <article class="beneficio-card">
+                <div class="beneficio-icono">
+                    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="14" y1="32" x2="50" y2="32"/>
+                        <rect x="6" y="22" width="6" height="20" rx="1.5"/>
+                        <rect x="2" y="26" width="3" height="12" rx="1"/>
+                        <rect x="52" y="22" width="6" height="20" rx="1.5"/>
+                        <rect x="59" y="26" width="3" height="12" rx="1"/>
+                    </svg>
+                </div>
+                <h3>Funcional Real</h3>
+                <p>Rutinas que mejoran tu día a día: fuerza, resistencia y movilidad.</p>
+            </article>
 
-            <!-- Cada div con clase beneficio representa una tarjeta individual -->
-            <div class="beneficio">
-                <h3>Entrenamiento funcional</h3>
-                <p>Rutinas completas para mejorar fuerza, resistencia y movilidad.</p>
-            </div>
+            <article class="beneficio-card">
+                <div class="beneficio-icono">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <h3>Energía Grupal</h3>
+                <p>Entrena con gente en tu nivel. La motivación se contagia.</p>
+            </article>
 
-            <div class="beneficio">
-                <h3>Clases grupales</h3>
-                <p>Entrena con más personas y mantente motivado todos los días.</p>
-            </div>
+            <article class="beneficio-card">
+                <div class="beneficio-icono">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                </div>
+                <h3>Coach Personal</h3>
+                <p>Te corregimos, te empujamos y te guiamos paso a paso.</p>
+            </article>
 
-            <div class="beneficio">
-                <h3>Acompañamiento</h3>
-                <p>Te guiamos paso a paso según tu nivel y tus objetivos.</p>
-            </div>
-
-            <div class="beneficio">
-                <h3>Comunidad Mashka</h3>
-                <p>Más que un box, somos una comunidad con energía y disciplina.</p>
-            </div>
-
+            <article class="beneficio-card">
+                <div class="beneficio-icono">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+                    </svg>
+                </div>
+                <h3>Tribu Mashka</h3>
+                <p>Más que socios: una comunidad que te empuja y celebra contigo.</p>
+            </article>
         </div>
     </section>
-
     <hr>
 
-    <section>
-        <h2 id="planes">Planes</h2>
-        <p>Elige el plan que mejor se adapte a tu ritmo de entrenamiento.</p>
+   <!-- Planes: 5 tarjetas con precio, beneficios y CTA -->
+    <section class="planes-section" id="planes">
+        <div class="planes-header">
+            <span class="seccion-tag">Membresías</span>
+            <h2 class="planes-titulo">Encuentra <span class="amarillo">tu plan</span></h2>
+            <p class="planes-sub">Elige el ritmo que mejor se adapte a tus objetivos.</p>
+        </div>
 
-        <!-- Agrupa todos los planes para acomodarlos mejor con CSS -->
-        <div class="planes-contenedor">
+        <div class="planes-grid">
+            <article class="plan-card">
+                <div class="plan-card-header">
+                    <h3>Grupal</h3>
+                    <span class="plan-tag">Para 3+</span>
+                </div>
+                <div class="plan-precio">
+                    <span class="moneda">$</span>
+                    <span class="numero">30</span>
+                    <span class="periodo">/ persona</span>
+                </div>
+                <p class="plan-desc">Entrena con tu grupo de amigos y motívense juntos.</p>
+                <ul class="plan-features">
+                    <li><span class="check">✓</span> Desde 3 personas</li>
+                    <li><span class="check">✓</span> Acceso a clases grupales</li>
+                    <li><span class="check">✓</span> Asesoría compartida</li>
+                </ul>
+                <a href="#contacto" class="plan-btn">Empezar</a>
+            </article>
 
-            <div class="plan">
-                <h3>Plan Grupal</h3>
+            <article class="plan-card">
+                <div class="plan-card-header">
+                    <h3>Estudiantes</h3>
+                    <span class="plan-tag">Con carnet</span>
+                </div>
+                <div class="plan-precio">
+                    <span class="moneda">$</span>
+                    <span class="numero">30</span>
+                    <span class="periodo">/ mes</span>
+                </div>
+                <p class="plan-desc">Pensado para jóvenes que buscan un estilo de vida activo.</p>
+                <ul class="plan-features">
+                    <li><span class="check">✓</span> Carnet estudiantil vigente</li>
+                    <li><span class="check">✓</span> Acceso ilimitado al box</li>
+                    <li><span class="check">✓</span> Horarios flexibles</li>
+                </ul>
+                <a href="#contacto" class="plan-btn">Empezar</a>
+            </article>
 
-                <!-- La clase precio permite darle un estilo especial al valor del plan -->
-                <p class="precio">$30</p>
-                <p>Por persona desde 3 personas.</p>
-            </div>
+            <article class="plan-card plan-destacado">
+                <div class="plan-badge">RECOMENDADO</div>
+                <div class="plan-card-header">
+                    <h3>Mensual</h3>
+                    <span class="plan-tag">Más popular</span>
+                </div>
+                <div class="plan-precio">
+                    <span class="moneda">$</span>
+                    <span class="numero">35</span>
+                    <span class="periodo">/ mes</span>
+                </div>
+                <p class="plan-desc">El balance perfecto para empezar y ver resultados reales.</p>
+                <ul class="plan-features">
+                    <li><span class="check">✓</span> Acceso completo al box</li>
+                    <li><span class="check">✓</span> Todas las clases grupales</li>
+                    <li><span class="check">✓</span> Plan personalizado</li>
+                    <li><span class="check">✓</span> Seguimiento mensual</li>
+                </ul>
+                <a href="#contacto" class="plan-btn plan-btn-destacado">Empezar ahora</a>
+            </article>
 
-            <div class="plan">
-                <h3>Plan Estudiantes</h3>
-                <p class="precio">$30</p>
-                <p>Presentando carnet estudiantil vigente.</p>
-            </div>
+            <article class="plan-card">
+                <div class="plan-card-header">
+                    <h3>Trimestral</h3>
+                    <span class="plan-tag">90 días</span>
+                </div>
+                <div class="plan-precio">
+                    <span class="moneda">$</span>
+                    <span class="numero">95</span>
+                    <span class="periodo">/ trimestre</span>
+                </div>
+                <p class="plan-desc">Comprométete con tu cambio y ahorra en el camino.</p>
+                <ul class="plan-features">
+                    <li><span class="check">✓</span> Acceso completo</li>
+                    <li><span class="check">✓</span> Disciplina garantizada</li>
+                    <li><span class="check">✓</span> Mejor precio mensual</li>
+                </ul>
+                <a href="#contacto" class="plan-btn">Empezar</a>
+            </article>
 
-            <!-- destacado se usa para resaltar este plan frente a los demás -->
-            <div class="plan destacado">
-                <h3>Plan Mensual</h3>
-                <p class="precio">$35</p>
-                <p>Ideal para empezar y probar tu primer mes.</p>
-            </div>
-
-            <div class="plan">
-                <h3>Plan Trimestral</h3>
-                <p class="precio">$95</p>
-                <p>Comprométete 90 días con tu cambio.</p>
-            </div>
-
-            <div class="plan">
-                <h3>Plan Semestral</h3>
-                <p class="precio">$180</p>
-                <p>Convierte el entrenamiento en un hábito.</p>
-            </div>
-
+            <article class="plan-card">
+                <div class="plan-card-header">
+                    <h3>Semestral</h3>
+                    <span class="plan-tag">Mejor valor</span>
+                </div>
+                <div class="plan-precio">
+                    <span class="moneda">$</span>
+                    <span class="numero">180</span>
+                    <span class="periodo">/ semestre</span>
+                </div>
+                <p class="plan-desc">Convierte el entrenamiento en un hábito de por vida.</p>
+                <ul class="plan-features">
+                    <li><span class="check">✓</span> Acceso completo</li>
+                    <li><span class="check">✓</span> Hábito consolidado</li>
+                    <li><span class="check">✓</span> Máximo ahorro</li>
+                </ul>
+                <a href="#contacto" class="plan-btn">Empezar</a>
+            </article>
         </div>
     </section>
 
