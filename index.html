@@ -3,25 +3,33 @@
 
 <head>
     <!-- Permite usar caracteres especiales como tildes y la letra ñ -->
-    <meta charset="UTF-8">   
+    <meta charset="UTF-8">
+
+    <!-- CRÍTICO: hace que la página se adapte al ancho real del dispositivo -->
+    <!-- Sin esto, los celulares fingen ser de 980px y encogen todo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Descripción para SEO (Google) y para cuando se comparte el link -->
+    <meta name="description" content="Mashka Box Training Club - Gimnasio de entrenamiento funcional en Latacunga, Ecuador">
+
     <!-- Nombre que aparece en la pestaña del navegador -->
-    <title>Mashka Box</title>
+    <title>Mashka Box - Training Club</title>
 
     <!-- Conecta este archivo HTML con el archivo de estilos CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <img class="logo-negocio" src="Imagenes/logo.jpeg" alt="Logo Mashka Box">
-    <!-- id permite que el enlace del menú pueda regresar a esta parte de la página -->
-    <h1 id="inicio">MASHKA</h1>
-    <h2>TRAINING CLUB</h2>
-    <p>Transforma tu cuerpo, eleva tu mente.</p>
+    <!-- header agrupa el logo, titulo principal y menú: es la parte superior del sitio -->
+    <header class="hero">
+        <img class="logo-negocio" src="Imagenes/logo.jpeg" alt="Logo Mashka Box">
+        <!-- id permite que el enlace del menú pueda regresar a esta parte de la página -->
+        <h1 id="inicio">MASHKA</h1>
+        <h2 class="subtitulo-hero">TRAINING CLUB</h2>
+        <p class="frase-hero">Transforma tu cuerpo, eleva tu mente.</p>
 
-    <h2>Menu de navegacion</h2>
-
-    <!-- nav agrupa los enlaces principales de navegación -->
-    <nav>
+        <!-- nav agrupa los enlaces principales de navegación -->
+        <nav>
         <!-- href con # lleva a una sección dentro de la misma página -->
         <a href="#inicio">Inicio</a>
         <a href="#nosotros">Sobre nosotros</a>
@@ -33,6 +41,7 @@
         <a href="#ubicacion">Ubicacion</a>
         <a href="#contacto">Contacto</a>
     </nav>
+    </header>
 
     <!-- Línea horizontal para separar visualmente las secciones -->
     <hr>
