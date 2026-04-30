@@ -2783,3 +2783,315 @@ footer p{
         grid-template-columns: 1fr;
     }
 }
+/* ═══════════════════════════════════════════════════════
+   FORMULARIO DE CONTACTO PREMIUM
+   ═══════════════════════════════════════════════════════ */
+
+.contacto-section{
+    background: linear-gradient(180deg, 
+        rgba(13, 13, 13, 0.95) 0%, 
+        rgba(5, 5, 5, 0.98) 100%);
+    border-left: none;
+    border-radius: 24px;
+    margin: 60px 20px;
+    padding: 60px 30px;
+    border: 1px solid rgba(255, 210, 31, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Resplandor amarillo decorativo de fondo */
+.contacto-section::before{
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 210, 31, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.contacto-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 900px){
+    .contacto-container{
+        grid-template-columns: 1fr 1.1fr;
+        gap: 60px;
+        align-items: start;
+    }
+}
+
+/* ─── Columna izquierda: copy motivacional ─── */
+
+.contacto-titulo{
+    font-size: 38px;
+    font-weight: 800;
+    color: white;
+    text-align: left;
+    border: none;
+    padding: 0;
+    margin: 16px 0 14px 0;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+}
+
+@media (min-width: 900px){
+    .contacto-titulo{
+        font-size: 44px;
+    }
+}
+
+.contacto-sub{
+    font-size: 16px;
+    color: #aaaaaa;
+    line-height: 1.7;
+    text-align: left;
+    padding: 0;
+    margin: 0 0 36px 0;
+}
+
+.contacto-puntos{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contacto-punto{
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.contacto-punto-icono{
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 210, 31, 0.15);
+    color: #FFD21F;
+    border: 1px solid rgba(255, 210, 31, 0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacto-punto strong{
+    display: block;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.contacto-punto p{
+    color: #aaaaaa;
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+/* ─── Columna derecha: el formulario en si ─── */
+
+.contacto-form-wrapper{
+    background: linear-gradient(180deg, 
+        rgba(255, 255, 255, 0.04) 0%, 
+        rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 36px 28px;
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+@media (min-width: 900px){
+    .contacto-form-wrapper{
+        padding: 40px 36px;
+    }
+}
+
+/* Override del estilo viejo del form */
+.contacto-form{
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    background: transparent;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+}
+
+.contacto-form-titulo{
+    color: white;
+    font-size: 22px;
+    font-weight: 800;
+    margin: 0 0 6px 0;
+    text-align: left;
+    border: none;
+    padding: 0;
+}
+
+.contacto-form-sub{
+    color: #888;
+    font-size: 13px;
+    text-align: left;
+    padding: 0;
+    margin: 0 0 24px 0;
+}
+
+/* Asterisco rojo para campos obligatorios */
+.obligatorio{
+    color: #ff4757;
+    font-weight: 800;
+}
+
+/* Cada grupo: label + input */
+.form-grupo{
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Override del label viejo */
+.contacto-form label{
+    display: block;
+    color: #e0e0e0;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    margin-bottom: 7px;
+    text-align: left;
+    text-transform: none;
+}
+
+/* Override fuerte de los inputs/selects (que tienen estilos generales) */
+.contacto-form input,
+.contacto-form select{
+    width: 100%;
+    margin: 0;
+    padding: 13px 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white;
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.25s ease;
+    outline: none;
+}
+
+.contacto-form input::placeholder{
+    color: #666;
+}
+
+/* Estado focus: borde amarillo y glow */
+.contacto-form input:focus,
+.contacto-form select:focus{
+    border-color: #FFD21F;
+    background: rgba(255, 210, 31, 0.05);
+    box-shadow: 0 0 0 3px rgba(255, 210, 31, 0.15);
+}
+
+/* Estado de validacion: si esta lleno y es valido, borde verde sutil */
+.contacto-form input:valid:not(:placeholder-shown),
+.contacto-form select:valid{
+    border-color: rgba(37, 211, 102, 0.4);
+}
+
+/* Estado invalido despues de tocarlo */
+.contacto-form input:invalid:not(:placeholder-shown):not(:focus){
+    border-color: rgba(255, 71, 87, 0.5);
+}
+
+/* Estilo especial para el select (la flecha) */
+.contacto-form select{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23FFD21F' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+.contacto-form select option{
+    background: #111;
+    color: white;
+    padding: 10px;
+}
+
+/* Fila de 2 columnas (objetivo + horario) */
+.form-fila{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+}
+
+@media (min-width: 600px){
+    .form-fila{
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+}
+
+/* Boton de envio - override del input[type=submit] viejo */
+.form-btn{
+    width: 100%;
+    margin-top: 8px;
+    padding: 16px 24px;
+    background: linear-gradient(90deg, #FFD21F 0%, #FFC107 100%);
+    color: #050505;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(255, 210, 31, 0.3);
+}
+
+.form-btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255, 210, 31, 0.45);
+    background: linear-gradient(90deg, #FFC107 0%, #FFD21F 100%);
+}
+
+.form-btn:active{
+    transform: translateY(-1px);
+}
+
+/* La flecha del boton se desplaza ligeramente al hover */
+.form-btn svg{
+    transition: transform 0.3s ease;
+}
+
+.form-btn:hover svg{
+    transform: translateX(4px);
+}
+
+/* Aviso de privacidad debajo del boton */
+.form-aviso{
+    color: #666;
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.5;
+    padding: 0;
+    margin: 16px 0 0 0;
+}
