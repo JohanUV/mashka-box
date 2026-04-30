@@ -211,23 +211,7 @@ img:hover{
     border-color: #FFD21F;
 }
 
-/* 
-    Contenedor de galeria.
-*/
-.galeria{
-    width: 90%;
-    margin: auto;
-}
 
-/* 
-    Imagenes dentro de la galeria.
-*/
-.galeria img{
-    width: 100%;
-    max-width: 380px;
-    border-radius: 15px;
-    border: 2px solid #4A9ADD;
-}
 
 /* 
     Listas.
@@ -990,4 +974,347 @@ footer p{
     color: #aaaaaa;
     font-size: 12px;
     margin-top: 2px;
+}
+/* ═══════════════════════════════════════════════════════
+   GALERIA TIPO MOSAICO BENTO - DINAMICA E INTERACTIVA
+   ═══════════════════════════════════════════════════════ */
+
+.galeria-section{
+    background: transparent;
+    border-left: none;
+    border-radius: 0;
+    margin: 80px 0;
+    padding: 0 20px;
+}
+
+.galeria-header{
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.galeria-titulo{
+    font-size: 38px;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    border: none;
+    padding: 0;
+    margin: 16px 0 12px 0;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+}
+
+@media (min-width: 900px){
+    .galeria-titulo{
+        font-size: 46px;
+    }
+}
+
+.galeria-sub{
+    font-size: 16px;
+    color: #aaaaaa;
+    line-height: 1.6;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* 
+    Grid maestro: 6 columnas x 6 filas en escritorio.
+    Permite que cada imagen ocupe celdas distintas creando un mosaico orgánico.
+    En movil: 2 columnas con tamaños variados.
+*/
+.galeria-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 160px;
+    gap: 18px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media (min-width: 700px){
+    .galeria-grid{
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: 130px;
+        gap: 22px;
+    }
+}
+
+@media (min-width: 1100px){
+    .galeria-grid{
+        grid-auto-rows: 150px;
+        gap: 26px;
+    }
+}
+
+/* 
+    Cada imagen ocupa una posicion personalizada en el mosaico.
+    En escritorio el patron es:
+    [  1  ][  1  ][  2  ][  3  ][  3  ][  3  ]
+    [  1  ][  1  ][  2  ][  3  ][  3  ][  3  ]
+    [  1  ][  1  ][  2  ][  4  ][  4  ][  6  ]
+    [  5  ][  5  ][  5  ][  4  ][  4  ][  6  ]
+    [  5  ][  5  ][  5  ][  4  ][  4  ][  6  ]
+*/
+
+/* Imagen 1: grande arriba izquierda - 2 cols x 3 rows */
+.galeria-item:nth-child(1){
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* Imagen 2: vertical alta - 1 col x 3 rows */
+.galeria-item:nth-child(2){
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+/* Imagen 3: ancha arriba derecha - 3 cols x 2 rows */
+.galeria-item:nth-child(3){
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+/* Imagen 4: media derecha - 2 cols x 2 rows */
+.galeria-item:nth-child(4){
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* Imagen 5: ancha abajo - 3 cols x 2 rows */
+.galeria-item:nth-child(5){
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* Imagen 6: vertical abajo derecha - 1 col x 2 rows */
+.galeria-item:nth-child(6){
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* En escritorio el patron cambia para crear mas variedad */
+@media (min-width: 700px){
+    .galeria-item:nth-child(1){
+        grid-column: span 2;
+        grid-row: span 3;
+    }
+    .galeria-item:nth-child(2){
+        grid-column: span 1;
+        grid-row: span 3;
+    }
+    .galeria-item:nth-child(3){
+        grid-column: span 3;
+        grid-row: span 2;
+    }
+    .galeria-item:nth-child(4){
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    .galeria-item:nth-child(5){
+        grid-column: span 3;
+        grid-row: span 2;
+    }
+    .galeria-item:nth-child(6){
+        grid-column: span 1;
+        grid-row: span 2;
+    }
+}
+
+/* 
+    Cada figura: contenedor de imagen con overlay.
+    Tiene una animacion sutil de flotacion para dar vida.
+*/
+.galeria-item{
+    position: relative;
+    margin: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transition: 
+        transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.4s ease;
+    /* Animacion de flotacion: cada item flota suavemente */
+    animation: flotar 6s ease-in-out infinite;
+}
+
+/* Cada item flota con un timing diferente para que no se muevan al unisono */
+.galeria-item:nth-child(1){ animation-delay: 0s; }
+.galeria-item:nth-child(2){ animation-delay: 1s; }
+.galeria-item:nth-child(3){ animation-delay: 2s; }
+.galeria-item:nth-child(4){ animation-delay: 3s; }
+.galeria-item:nth-child(5){ animation-delay: 4s; }
+.galeria-item:nth-child(6){ animation-delay: 5s; }
+
+@keyframes flotar{
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+/* 
+    Cada imagen tiene un color de glow distinto, alternando
+    los 3 colores de la paleta de marca.
+    Box-shadow doble: una sombra base + un halo de color.
+*/
+.galeria-item:nth-child(1){
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 210, 31, 0.2),
+        0 0 30px rgba(255, 210, 31, 0.15);
+}
+.galeria-item:nth-child(2){
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(74, 154, 221, 0.25),
+        0 0 30px rgba(74, 154, 221, 0.15);
+}
+.galeria-item:nth-child(3){
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 210, 31, 0.2),
+        0 0 30px rgba(255, 210, 31, 0.15);
+}
+.galeria-item:nth-child(4){
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(74, 154, 221, 0.25),
+        0 0 30px rgba(74, 154, 221, 0.15);
+}
+.galeria-item:nth-child(5){
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 210, 31, 0.2),
+        0 0 30px rgba(255, 210, 31, 0.15);
+}
+.galeria-item:nth-child(6){
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(74, 154, 221, 0.25),
+        0 0 30px rgba(74, 154, 221, 0.15);
+}
+
+/* 
+    Hover: la imagen se eleva, brilla mas fuerte y pausa la flotacion.
+    Las amarillas brillan amarillo, las azules brillan azul.
+*/
+.galeria-item:hover{
+    animation-play-state: paused;
+    transform: translateY(-10px) scale(1.02);
+    z-index: 2;
+}
+
+.galeria-item:nth-child(odd):hover{
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.5),
+        0 0 0 2px rgba(255, 210, 31, 0.7),
+        0 0 50px rgba(255, 210, 31, 0.4);
+}
+
+.galeria-item:nth-child(even):hover{
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.5),
+        0 0 0 2px rgba(74, 154, 221, 0.7),
+        0 0 50px rgba(74, 154, 221, 0.4);
+}
+
+/* 
+    La imagen: ocupa todo el contenedor.
+    Override del estilo generico de img.
+*/
+.galeria-item img{
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.galeria-item:hover img{
+    transform: scale(1.1);
+}
+
+/* Caption con degradado oscuro abajo */
+.galeria-item figcaption{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 18px;
+    background: linear-gradient(180deg, 
+        rgba(0, 0, 0, 0) 50%, 
+        rgba(0, 0, 0, 0.85) 100%);
+    transition: background 0.3s ease;
+}
+
+.galeria-item:hover figcaption{
+    background: linear-gradient(180deg, 
+        rgba(0, 0, 0, 0.2) 0%, 
+        rgba(0, 0, 0, 0.9) 100%);
+}
+
+/* Etiqueta de categoria - alterna amarillo y azul */
+.galeria-categoria{
+    display: inline-block;
+    align-self: flex-start;
+    color: #050505;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.galeria-item:nth-child(odd) .galeria-categoria{
+    background: rgba(255, 210, 31, 0.95);
+}
+
+.galeria-item:nth-child(even) .galeria-categoria{
+    background: rgba(74, 154, 221, 0.95);
+    color: white;
+}
+
+.galeria-titulo-card{
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease 0.05s, transform 0.3s ease 0.05s;
+}
+
+@media (min-width: 700px){
+    .galeria-titulo-card{
+        font-size: 18px;
+    }
+}
+
+.galeria-item:hover .galeria-categoria,
+.galeria-item:hover .galeria-titulo-card{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 
+    "Empuje" entre vecinas: cuando pasas el mouse sobre una,
+    las de al lado se inclinan ligeramente como si la "saludaran".
+*/
+.galeria-grid:has(.galeria-item:hover) .galeria-item:not(:hover){
+    opacity: 0.7;
+    transform: scale(0.98);
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }

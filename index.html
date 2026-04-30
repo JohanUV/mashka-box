@@ -110,7 +110,7 @@
 
             <!-- Lado derecho: imagen del local -->
             <div class="nosotros-imagen">
-                <img src="Imagenes/entrenamiento3.jpeg" alt="Entrenamiento en Mashka Box">
+                <img src="Imagenes/logo1.jpeg" alt="Entrenamiento en Mashka Box">
                 <!-- Badge flotante decorativo sobre la imagen -->
                 <div class="imagen-badge">
                     <strong>Latacunga</strong>
@@ -120,24 +120,63 @@
         </div>
     </section>
 
-    <section>
-        <h2 id="galeria">Galeria de imagenes</h2>
-        <p>
-            Conoce un poco del ambiente, los entrenamientos y la comunidad de Mashka Box.
-        </p>
+    <!-- Galeria estilo masonry: cuadricula asimetrica que ocupa todo el ancho -->
+    <section class="galeria-section" id="galeria">
+        <div class="galeria-header">
+            <span class="seccion-tag">Nuestro espacio</span>
+            <h2 class="galeria-titulo">Conoce <span class="amarillo">Mashka Box</span></h2>
+            <p class="galeria-sub">Equipamiento profesional, ambiente motivador y una comunidad que entrena fuerte.</p>
+        </div>
 
-        <!-- class sirve para aplicar estilos desde CSS a este grupo de imágenes -->
-        <div class="galeria">
-
-            <!-- src indica la ubicación de la imagen y alt describe la imagen si no carga -->
-            <img src="Imagenes/logo1.jpeg" alt="Logo de Mashka Box">
-
-            <img src="Imagenes/entrenamiento1.jpeg" alt="Entrenamiento funcional en Mashka Box">
-            <img src="Imagenes/entrenamiento2.jpeg" alt="Clase grupal de crossfit">
-            <img src="Imagenes/entrenamiento3.jpeg" alt="Comunidad Mashka Box">
+        <!-- 
+            Grid de 6 imagenes. La primera ocupa 2 filas para crear ritmo visual.
+            Cada item tiene un overlay que aparece al pasar el mouse encima.
+        -->
+        <div class="galeria-grid">
+            <figure class="galeria-item galeria-grande">
+                <img src="Imagenes/entrenamiento1.jpeg" alt="Equipamiento de Mashka Box">
+                <figcaption>
+                    <span class="galeria-categoria">Equipamiento</span>
+                    <span class="galeria-titulo-card">Material profesional</span>
+                </figcaption>
+            </figure>
+            <figure class="galeria-item">
+                <img src="Imagenes/entrenamiento2.jpeg" alt="Espacio de entrenamiento">
+                <figcaption>
+                    <span class="galeria-categoria">Espacio</span>
+                    <span class="galeria-titulo-card">Ambiente motivador</span>
+                </figcaption>
+            </figure>
+            <figure class="galeria-item">
+                <img src="Imagenes/entrenamiento3.jpeg" alt="Comunidad Mashka Box">
+                <figcaption>
+                    <span class="galeria-categoria">Comunidad</span>
+                    <span class="galeria-titulo-card">Entrena con tu tribu</span>
+                </figcaption>
+            </figure>
+            <figure class="galeria-item">
+                <img src="Imagenes/entrenamiento4.jpg" alt="Instalaciones del gimnasio">
+                <figcaption>
+                    <span class="galeria-categoria">Instalaciones</span>
+                    <span class="galeria-titulo-card">Diseñado para entrenar</span>
+                </figcaption>
+            </figure>
+            <figure class="galeria-item">
+                <img src="Imagenes/entrenamiento5.jpg" alt="Pesas olimpicas">
+                <figcaption>
+                    <span class="galeria-categoria">Pesas</span>
+                    <span class="galeria-titulo-card">Para todos los niveles</span>
+                </figcaption>
+            </figure>
+            <figure class="galeria-item">
+                <img src="Imagenes/entrenamiento6.jpg" alt="Entrenamiento funcional">
+                <figcaption>
+                    <span class="galeria-categoria">Funcional</span>
+                    <span class="galeria-titulo-card">Movimiento real</span>
+                </figcaption>
+            </figure>
         </div>
     </section>
-
     <hr>
 
     <section>
