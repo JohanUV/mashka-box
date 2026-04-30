@@ -22,7 +22,19 @@
 <body>
     <!-- header agrupa el logo, titulo principal y menú: es la parte superior del sitio -->
     <header class="hero">
-        <img class="logo-negocio" src="Imagenes/logo.jpeg" alt="Logo Mashka Box">
+<!-- Icono de pesa como simbolo de marca, queda nitido en cualquier tamaño -->
+<div class="logo-negocio" aria-label="Mashka Box">
+    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Barra central -->
+        <line x1="14" y1="32" x2="50" y2="32"/>
+        <!-- Pesa izquierda -->
+        <rect x="6" y="22" width="6" height="20" rx="1.5"/>
+        <rect x="2" y="26" width="3" height="12" rx="1"/>
+        <!-- Pesa derecha -->
+        <rect x="52" y="22" width="6" height="20" rx="1.5"/>
+        <rect x="59" y="26" width="3" height="12" rx="1"/>
+    </svg>
+</div>
         <!-- id permite que el enlace del menú pueda regresar a esta parte de la página -->
         <h1 id="inicio">MASHKA</h1>
         <h2 class="subtitulo-hero">TRAINING CLUB</h2>
@@ -44,39 +56,69 @@
     </header>
 
     <!-- Línea horizontal para separar visualmente las secciones -->
-    <hr>
+  <!-- Seccion combinada: bienvenida + sobre nosotros con stats e imagen -->
+    <section class="nosotros" id="nosotros">
+        <div class="nosotros-grid">
+            <!-- Lado izquierdo: texto e info -->
+            <div class="nosotros-texto">
+                <span class="seccion-tag">Quiénes somos</span>
+                <h2 class="nosotros-titulo">Más que un gimnasio,<br><span class="amarillo">una tribu.</span></h2>
+                <p class="nosotros-lead">
+                    Entrenamiento funcional, comunidad real y resultados que se sienten.
+                    En Mashka Box transformamos cuerpos y mentes.
+                </p>
+                <p class="nosotros-bajada">
+                    Un espacio diseñado para mujeres jóvenes y personas comprometidas con su
+                    cambio físico. Aquí no entrenas solo: te empuja una comunidad.
+                </p>
 
-    <!-- section se usa para dividir el contenido por temas -->
-    <section>
-        <h2>Bienvenida</h2>
-        <p>
-            Bienvenido a Mashka Box, un espacio creado para ayudarte a alcanzar tus
-            objetivos de salud, bienestar y entrenamiento fisico.
-        </p>
-        <p>
-            Aqui encontraras energia, disciplina, constancia y una comunidad lista
-            para acompañarte en cada entrenamiento.
-        </p>
+                <!-- Stats: 3 valores genericos que definen la marca -->
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-icono">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3>Comunidad</h3>
+                        <p>Entrenas rodeado de gente que va por lo mismo que tú.</p>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-icono">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            </svg>
+                        </div>
+                        <h3>Disciplina</h3>
+                        <p>Rutinas con objetivo claro. Cada clase suma a tu meta.</p>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-icono">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <h3>Resultados</h3>
+                        <p>Más fuerza, mejor condición física y energía real.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lado derecho: imagen del local -->
+            <div class="nosotros-imagen">
+                <img src="Imagenes/entrenamiento3.jpeg" alt="Entrenamiento en Mashka Box">
+                <!-- Badge flotante decorativo sobre la imagen -->
+                <div class="imagen-badge">
+                    <strong>Latacunga</strong>
+                    <span>Av. Unidad Nacional</span>
+                </div>
+            </div>
+        </div>
     </section>
-
-    <hr>
-
-    <section>
-        <!-- id conecta esta sección con el enlace "Sobre nosotros" del menú -->
-        <h2 id="nosotros">Sobre nosotros</h2>
-        <p>
-            En Mashka Box nos dedicamos a ayudar a mujeres jovenes y a toda persona
-            interesada en mejorar su condicion fisica a traves de programas de
-            entrenamiento, clases grupales y asesoramiento.
-        </p>
-
-        <p>
-            Contamos con un ambiente moderno, motivador y una comunidad enfocada en
-            crecer, mejorar y mantener un estilo de vida saludable.
-        </p>
-    </section>
-
-    <hr>
 
     <section>
         <h2 id="galeria">Galeria de imagenes</h2>

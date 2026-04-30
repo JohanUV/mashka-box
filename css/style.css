@@ -687,33 +687,48 @@ footer p{
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
-/* 
-    Logo del negocio.
-    Se muestra arriba a la izquierda y se queda dentro del header.
-*/
-.logo-negocio{
-    position: absolute;
-    top: 25px;
-    left: 25px;
-    width: 200px;
-    height: 80px;
-    object-fit: cover;
-    object-position: center;
-    border: none;
-    border-radius: 10px;
-    margin: 0;
-}
 
 /* 
     En pantallas chicas, el logo se centra arriba y deja espacio
     para que el título no choque con él.
 */
+/* 
+    Logo de la pesa en el hero.
+    Es un contenedor que aloja el SVG y le da el efecto visual.
+*/
+.logo-negocio{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 64px;
+    height: 64px;
+    /* El color amarillo se hereda al SVG via currentColor */
+    color: #FFD21F;
+    /* Halo brillante alrededor */
+    filter: drop-shadow(0 0 12px rgba(255, 210, 31, 0.5));
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+
+/* El SVG ocupa todo el contenedor */
+.logo-negocio svg{
+    width: 100%;
+    height: 100%;
+}
+
+/* Al pasar el mouse: gira un poquito y brilla mas fuerte */
+.logo-negocio:hover{
+    transform: rotate(-8deg) scale(1.1);
+    filter: drop-shadow(0 0 20px rgba(255, 210, 31, 0.9));
+}
+
+/* En pantallas chicas, el logo se centra arriba */
 @media (max-width: 600px){
     .logo-negocio{
         position: static;
         margin: 0 auto 15px;
-        width: 180px;
-        height: 70px;
+        width: 56px;
+        height: 56px;
     }
     .hero h1{
         margin-top: 10px;
@@ -740,4 +755,239 @@ footer p{
     color: #aaaaaa;
     font-style: italic;
     letter-spacing: 1px;
+}
+/* ═══════════════════════════════════════════════════════
+   SECCION NOSOTROS (Bienvenida + Sobre nosotros refundidos)
+   ═══════════════════════════════════════════════════════ */
+
+/* 
+    Override del estilo de section general para esta seccion concreta.
+    Quitamos el border-left azul porque vamos a usar otro estilo.
+*/
+.nosotros{
+    background-color: #0d0d0d;
+    border-left: none;
+    border-radius: 20px;
+    padding: 60px 30px;
+    margin: 40px 20px;
+    /* Borde sutil con glow azul difuminado */
+    border: 1px solid rgba(74, 154, 221, 0.15);
+    box-shadow: 0 0 60px rgba(74, 154, 221, 0.08);
+    overflow: hidden;
+    position: relative;
+}
+
+/* 
+    Grid de 2 columnas en escritorio.
+    En movil colapsa automaticamente a 1 columna.
+*/
+.nosotros-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+@media (min-width: 900px){
+    .nosotros-grid{
+        grid-template-columns: 1.1fr 1fr;
+        gap: 60px;
+    }
+}
+
+/* 
+    Etiqueta pequeña arriba del titulo.
+    Como un "tag" o "kicker" tipico en sitios modernos.
+*/
+.seccion-tag{
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(74, 154, 221, 0.15);
+    color: #4A9ADD;
+    border: 1px solid rgba(74, 154, 221, 0.3);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* 
+    Titulo de la seccion. Reescrito mas grande y mas potente.
+    Override del border-bottom amarillo del h2 generico.
+*/
+.nosotros-titulo{
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: white;
+    text-align: left;
+    border: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    letter-spacing: -0.5px;
+}
+
+@media (min-width: 900px){
+    .nosotros-titulo{
+        font-size: 48px;
+    }
+}
+
+/* La parte amarilla del titulo */
+.amarillo{
+    color: #FFD21F;
+}
+
+/* 
+    Texto principal (lead).
+    Override del padding y align del p generico.
+*/
+.nosotros-lead{
+    font-size: 18px;
+    color: #e0e0e0;
+    line-height: 1.6;
+    text-align: left;
+    padding: 0;
+    margin-bottom: 16px;
+}
+
+.nosotros-bajada{
+    font-size: 15px;
+    color: #aaaaaa;
+    line-height: 1.7;
+    text-align: left;
+    padding: 0;
+    margin-bottom: 35px;
+}
+
+/* 
+    Grid de stats: 3 columnas en escritorio, 1 en movil.
+*/
+.stats{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+
+@media (min-width: 700px){
+    .stats{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+    }
+}
+
+/* Cada tarjeta de stat */
+.stat{
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 18px 14px;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.stat:hover{
+    border-color: rgba(255, 210, 31, 0.4);
+    background: rgba(255, 210, 31, 0.04);
+    transform: translateY(-3px);
+}
+
+/* Cuadradito que contiene el icono SVG */
+.stat-icono{
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 210, 31, 0.12);
+    color: #FFD21F;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.stat h3{
+    color: white;
+    font-size: 16px;
+    margin: 0 0 6px 0;
+    text-align: left;
+    border: none;
+    padding: 0;
+}
+
+.stat p{
+    font-size: 13px;
+    color: #aaaaaa;
+    line-height: 1.5;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+/* 
+    Lado derecho: contenedor de la imagen.
+*/
+.nosotros-imagen{
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    /* Halo de marca alrededor de la imagen */
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 210, 31, 0.2);
+}
+
+/* 
+    La imagen ocupa todo el contenedor.
+    Override del estilo generico de img.
+*/
+.nosotros-imagen img{
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    min-height: 380px;
+    margin: 0;
+    border: none;
+    border-radius: 20px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.nosotros-imagen:hover img{
+    transform: scale(1.05);
+}
+
+/* 
+    Badge flotante en la esquina inferior izquierda de la imagen.
+    Tipo "estamos aqui" como una tarjetita de ubicacion.
+*/
+.imagen-badge{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 210, 31, 0.3);
+}
+
+.imagen-badge strong{
+    display: block;
+    color: #FFD21F;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.imagen-badge span{
+    display: block;
+    color: #aaaaaa;
+    font-size: 12px;
+    margin-top: 2px;
 }
